@@ -5,10 +5,11 @@ html {
 
 body {
     color: var(--color-black);
-    font-size: var(font-size-medium);
+    font-size: var(--font-size-medium);
+    font-family: var(--font-family-base);
 }
 
-link {
+a {
     color: var(--color-black);
 }
 
@@ -34,10 +35,6 @@ link {
     --font-size-large: 1.8rem;
     --font-size-x-large: 2.3rem;
     --font-size-xx-large: 4.8rem;
-}
-
-body {
-    font-family: var(--font-family-base);
 }
 
 h1 {
