@@ -7,7 +7,7 @@ body {
 }
 
 a {
-    color: var(--color-black);
+    color: var(--text-color);
 }
 
 .card-category {

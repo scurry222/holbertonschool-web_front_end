@@ -11,7 +11,7 @@ body {
 }
 
 a[href] {
-    color: var(--color-black);
+    color: var(--text-color);
     text-decoration: none;
 }
 a:visited {
