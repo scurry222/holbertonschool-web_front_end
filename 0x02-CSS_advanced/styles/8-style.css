@@ -1,27 +1,3 @@
-html {
-    scroll-behavior: smooth;
-    font-size: 62.5%;
-}
-
-body {
-    color: var(--color-black);
-    font-size: var(--font-size-medium);
-    min-height: var(--line-family-base);
-    font-family: var(--font-family-base);
-}
-
-a {
-    color: var(--text-color);
-}
-
-.card-category {
-    color: var(--color-primary);
-}
-
-.section-tagline {
-    color: var(--color-primary);
-}
-
 :root {
     --color-primary: #d73953;
     --color-black: #090909;
@@ -41,8 +17,42 @@ a {
     --line-height-small: 1.2;
     --line-height-base: 1.5;
     --line-height-big: 1.8;
+    --section-tagline-transform: uppercase;
 }
 
-h1 {
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+    min-height: var(--line-height-base);
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-regular);
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+
+.section-tagline {
+    color: var(--color-primary);
+    font-family: var(--font-family-title);
+    text-transform: var(--section-tagline-transform);
+    font-weight: var(--font-weight-bold);
+}
+
+.card-category {
+    color: var(--color-primary);
+}
+
+.footer ul {
+    text-align: right;
+}
+
+.footer {
+    padding: var(--footer-padding);
 }
