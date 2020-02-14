@@ -1,0 +1,15 @@
+/* Sass file that assigns margins to properties using a mixin. */
+%shared {
+    font-size: 12px;
+}
+.info {
+    @extend %shared;
+}
+.success {
+    @extend %shared;
+    color: #00FF00;
+}
+.warning {
+    @extend %shared;
+    color: #FF0000;
+}

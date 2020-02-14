@@ -1,0 +1,8 @@
+/* Import photo names from a file and add them to the associated background. */
+@import '11-photos.scss';
+
+@each $name in $list-names {
+    .photo-#{$name} {
+        background: image-url("photos/#{name}.jpg") no-repeat;
+    }
+} 
