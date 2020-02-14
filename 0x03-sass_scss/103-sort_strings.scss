@@ -1,0 +1,48 @@
+/* Sass file to implement a sorting algorithm to sort the list input. */
+@import '103-sort_list.scss';
+
+$alpha: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
+
+
+@function strcmp($str1, $str2, $order) {
+    // compare characters in both strings
+    @for $i from 1 through min(str-length($str1), str-length($str2)) {
+        $c1: str-slice($str1, $i, $i);
+        $c2: str-slice($str2, $i, $i);
+
+        @if $c1 and $c2 and index($order, $c1) != index($order, $c2) {
+            @return index($order, $c1) < index($order, $c2);
+        }
+    }
+    @return str-length($c1) < str-length($c2);
+}
+
+@function swap($list_to_sort, $i1, $i2) {
+    @if $i1 > length($list_to_sort) or $i2 > length($list_to_sort) {
+        @return $list_to_sort;
+    }
+    // 'nth' modifies original list
+    $temp: nth($list_to_sort, $i1);
+    $list_to_sort: set-nth($list_to_sort, $i1, nth($list_to_sort, $i2));
+    $list_to_sort: set-nth($list_to_sort, $i2, $temp);
+    @return $list_to_sort;
+}
+
+@function sort($list_to_sort, $order: $alpha) {
+    // Bubble sort implementation to swap strings iteratively
+    // Compare both ends of list, iterators crossing each other
+    @for $i from 1 through length($list_to_sort) {
+        @for $j from $i * -1 through -1 {
+            // iterate backward
+            $j: abs($j);
+            @if $j > 1 and strcmp(nth($list_to_sort, $j),
+             nth($list_to_sort, $j - 1), $order) {
+                $list_to_sort: swap($list_to_sort, $j, $j - 1);
+            }
+        }
+    }
+    @debug $list_to_sort;
+    @return $list_to_sort;
+}
+
+$sort: sort($list_to_sort);
