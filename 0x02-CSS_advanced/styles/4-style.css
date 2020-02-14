@@ -28,19 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-tagline {
     color: var(--color-primary);
-    font-family: var(--font-family-title);
-    text-transform: var(--section-tagline-transform);
-    font-weight: var(--font-weight-bold);
 }
 
 .card-category {
     color: var(--color-primary);
-}
-
-.footer ul {
-    text-align: right;
-}
-
-.footer {
-    padding: var(--footer-padding);
 }
