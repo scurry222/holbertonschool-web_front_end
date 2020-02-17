@@ -3,7 +3,6 @@
 
 $alpha: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
 
-
 @function strcmp($str1, $str2, $order) {
     // compare characters in both strings
     @for $i from 1 through min(str-length($str1), str-length($str2)) {
@@ -18,6 +17,7 @@ $alpha: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
 }
 
 @function swap($list_to_sort, $i1, $i2) {
+    // remove improper indexing
     @if $i1 > length($list_to_sort) or $i2 > length($list_to_sort) {
         @return $list_to_sort;
     }
@@ -29,8 +29,7 @@ $alpha: a b c d e f g h i j k l m n o p q r s t u v w x y z !default;
 }
 
 @function sort($list_to_sort, $order: $alpha) {
-    // Bubble sort implementation to swap strings iteratively
-    // Compare both ends of list, iterators crossing each other
+    // Bubble sort implementation to swap strings iteratively until done
     @for $i from 1 through length($list_to_sort) {
         @for $j from $i * -1 through -1 {
             // iterate backward
