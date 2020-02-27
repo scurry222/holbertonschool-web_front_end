@@ -169,7 +169,7 @@
   /* Helpers
       ============================= */
 
-  .main img {
+  main img {
     width: 100%;
     height: auto;
   }
@@ -230,7 +230,7 @@
       margin: 0;
     }
 
-    [class^="col"] {
+    [class^="col-"] {
       margin: 0 0 3rem 0;
     }
   
