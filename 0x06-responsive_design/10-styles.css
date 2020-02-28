@@ -306,7 +306,7 @@
       max-height: 0;
       transition: max-height .2s ease-out;
     }
-
+    
     .header .menu-icon {
       cursor: pointer;
       padding: 2.5rem;
@@ -452,6 +452,20 @@
     fill: var(--text-color);
   }
   
+  @media only screen and (max-width: 767px) {
+    :root {
+      --footer-padding: 5rem 2rem 1rem;
+    }
+    .footer .social.nav, .footer .footer-nav {
+      /* display: block; */
+      text-align: center;
+    }
+    .social.nav li + li, .footer-nav li + li {
+      padding-left: 2rem;
+    }
+
+  }
+
   /*** 3. SECTION ***/
   
   /* Section (all styles)
@@ -539,18 +553,27 @@
     min-height: 35vh;
   }
 
-@media only screen and (max-width: 767px) {
+  .article-page .section-hero {
+    margin-top: -8.5rem;
+    padding-top: 5rem;
+  }
 
-  .section-hero {
-    margin: -0.1rem 0;
+  .article-page .header {
+    background-color: transparent;
   }
-  .hero-homepage {
-    background-position: 85% 0;
+
+  @media only screen and (max-width: 767px) {
+
+    .section-hero {
+      margin: -0.1rem 0;
+    }
+    .hero-homepage {
+      background-position: 85% 0;
+    }
+    .section-hero .section-body {
+      padding: 2rem;
+    }
   }
-  .section-hero .section-body {
-    padding: 2rem;
-  }
-}
 
   /* Section BLOG
       ============================= */

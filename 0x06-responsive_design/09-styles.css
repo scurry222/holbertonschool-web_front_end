@@ -300,13 +300,13 @@
       flex: 1;
     }
 
-    .nav {
+    .header .nav {
       flex-direction: column;
       overflow: hidden;
       max-height: 0;
       transition: max-height .2s ease-out;
     }
-
+    
     .header .menu-icon {
       cursor: pointer;
       padding: 2.5rem;
@@ -457,12 +457,12 @@
       --footer-padding: 5rem 2rem 1rem;
     }
     .footer .social.nav, .footer .footer-nav {
+      /* display: block; */
       text-align: center;
     }
     .social.nav li + li, .footer-nav li + li {
       padding-left: 2rem;
     }
-
   }
 
   /*** 3. SECTION ***/
