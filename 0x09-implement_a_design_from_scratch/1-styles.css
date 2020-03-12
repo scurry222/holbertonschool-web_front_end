@@ -1,0 +1,219 @@
+:root {
+  --font-family: 'Source Sans Pro', sans-serif;
+  --font-weight: bold;
+  --font-weight-bolder: bolder;
+  --font-size-large: 50px;
+  --font-size-medium: 32px;
+  --font-size-small: 18px;
+  --letter-spacing: 0px;
+  --color-white: white;
+  --color-red: #FF6565;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* HEADER */
+header {
+  background: url('images_2/headphones_hero_1.jpg') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  /* max-width: 1000px; */
+}
+
+.header-container {
+  display: block;
+}
+
+.header-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.header-content {
+  display: block;
+  text-align: center;
+  width: 60rem;
+  height: 20rem;
+  margin: auto;
+  margin-top: 35vh;
+  color: var(--color-white);
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
+}
+
+/* NAV */
+.menu-btn, .menu-open, .menu-open-button {
+  display: none;
+}
+
+.nav {
+  /* margin: 0; */
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+  
+.nav .nav-item {
+  font-family: var(--font-family);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight);
+}
+
+.nav-item {
+  width: 8.5rem;
+  padding: .6rem;
+}
+
+.nav-link:hover{
+  color: var(--color-red);
+}
+
+.nav .nav-link {
+  /* display: block; */
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 480px) {
+  /* .header-top {
+    display: inline;
+  } */
+
+  header {
+    height: 70rem;
+  }
+  .menu-open-button {
+    display: flex;
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: .4rem;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    color: white;
+    cursor: pointer;
+    transition: transform .3s ease;
+  }
+  .nav {
+    display: block;
+    margin-bottom: -22rem;
+    margin-left: -15rem;
+    visibility: hidden;
+  }
+
+  .menu-open-button:hover {
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition-duration: .3s;
+  }
+  /* .navbar-menu {
+    display: block;
+  } */
+  .menu-line {
+      display: block;
+      background: white;
+      width: 1.5rem;
+      height: .15rem;
+      margin: .15rem;
+      transition: all 0.3s ease;
+  }
+
+  .menu-line-2 {
+    width: 1rem;
+    /* margin-left: -.25rem; */
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-1 {
+    position: absolute;
+    /* margin: auto; */
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-2 {
+      display: none;
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-3 {
+      position: absolute;
+      /* margin: auto; */
+      top: 50%;
+      transform: rotate(45deg);
+  }
+
+  .nav-item {
+      display: flex;
+      /* visibility: hidden; */
+      width: 4.5rem;
+      height: 4.5rem;
+      margin: .4rem;
+      justify-content: center;
+      align-items: center;
+      /* color: white; */
+      transition: .3s ease;
+  }
+
+  .menu-open ~ .nav-item {
+      margin-top: -5rem;
+      /* margin: .4rem; */
+  }
+
+  .menu-open:checked ~ .navbar-menu .nav {
+      visibility: visible;
+      /* display: flex; */
+      /* margin-top: .75rem; */
+      /* margin: .4rem; */
+  }
+}
+
+/* HEADER-CONTENT */
+.header-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bolder);
+}
+
+.header-subtitle {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bolder);
+}
+
+.btn-primary {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  font-weight: var(--font-weight-bolder);
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  width: 12rem;
+  border: 2px solid var(--color-red);
+  border-radius: 5rem;
+}
+.btn-primary:hover, .btn-primary:active {
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 480px) {
+  .header-content {
+    width: 20rem;
+    margin-top: 25vh;
+  }
+}
