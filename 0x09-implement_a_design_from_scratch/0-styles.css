@@ -52,17 +52,8 @@ header {
   letter-spacing: var(--letter-spacing);
 }
 
-@media only screen and (max-width: 480px) {
-  .header-top {
-    display: block;
-  }
-  .menu-btn, .menu-icon {
-    display: block;
-  }
-}
-
 /* NAV */
-.menu-btn, .menu-icon {
+.menu-btn, .menu-open, .menu-open-button {
   display: none;
 }
 
@@ -99,6 +90,99 @@ header {
   color: white;
 }
 
+@media only screen and (max-width: 480px) {
+  /* .header-top {
+    display: inline;
+  } */
+
+  header {
+    height: 70rem;
+  }
+  .menu-open-button {
+    display: flex;
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: .4rem;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    color: white;
+    cursor: pointer;
+    transition: transform .3s ease;
+  }
+  .nav {
+    display: block;
+    margin-bottom: -22rem;
+    margin-left: -15rem;
+    visibility: hidden;
+  }
+
+  .menu-open-button:hover {
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition-duration: .3s;
+  }
+  /* .navbar-menu {
+    display: block;
+  } */
+  .menu-line {
+      display: block;
+      background: white;
+      width: 1.5rem;
+      height: .15rem;
+      margin: .15rem;
+      transition: all 0.3s ease;
+  }
+
+  .menu-line-2 {
+    width: 1rem;
+    /* margin-left: -.25rem; */
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-1 {
+    position: absolute;
+    /* margin: auto; */
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-2 {
+      display: none;
+  }
+
+  .menu-open:checked ~ .menu-open-button .menu-line-3 {
+      position: absolute;
+      /* margin: auto; */
+      top: 50%;
+      transform: rotate(45deg);
+  }
+
+  .nav-item {
+      display: flex;
+      /* visibility: hidden; */
+      width: 4.5rem;
+      height: 4.5rem;
+      margin: .4rem;
+      justify-content: center;
+      align-items: center;
+      /* color: white; */
+      transition: .3s ease;
+  }
+
+  .menu-open ~ .nav-item {
+      margin-top: -5rem;
+      /* margin: .4rem; */
+  }
+
+  .menu-open:checked ~ .navbar-menu .nav {
+      visibility: visible;
+      /* display: flex; */
+      /* margin-top: .75rem; */
+      /* margin: .4rem; */
+  }
+}
+
 /* HEADER-CONTENT */
 .header-title {
   font-size: var(--font-size-large);
@@ -125,4 +209,11 @@ header {
 }
 .btn-primary:hover, .btn-primary:active {
   opacity: 0.9;
+}
+
+@media only screen and (max-width: 480px) {
+  .header-content {
+    width: 20rem;
+    margin-top: 25vh;
+  }
 }
