@@ -4,7 +4,7 @@
   --font-weight-bolder: bolder;
   --font-size-large: 50px;
   --font-size-medium: 32px;
-  --font-size-small: 18px;
+  --font-size-small: 20px;
   --letter-spacing: 0px;
   --color-white: white;
   --color-red: #FF6565;
@@ -23,7 +23,6 @@ header {
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
-  /* max-width: 1000px; */
 }
 
 .header-container {
@@ -58,7 +57,6 @@ header {
 }
 
 .nav {
-  /* margin: 0; */
   list-style: none;
   text-align: center;
   display: flex;
@@ -81,7 +79,6 @@ header {
 }
 
 .nav .nav-link {
-  /* display: block; */
   position: relative;
 }
 
@@ -91,22 +88,21 @@ header {
 }
 
 @media only screen and (max-width: 480px) {
-  /* .header-top {
-    display: inline;
-  } */
 
   header {
     height: 70rem;
   }
+  .header-top {
+    padding-left: 1%;
+  }
+
   .menu-open-button {
     display: flex;
     position: relative;
     width: 4.5rem;
     height: 4.5rem;
-    margin: .4rem;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     color: white;
     cursor: pointer;
     transition: transform .3s ease;
@@ -123,27 +119,23 @@ header {
       backface-visibility: hidden;
       transition-duration: .3s;
   }
-  /* .navbar-menu {
-    display: block;
-  } */
+
   .menu-line {
       display: block;
       background: white;
       width: 1.5rem;
       height: .15rem;
       margin: .15rem;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
   }
 
   .menu-line-2 {
     width: 1rem;
-    /* margin-left: -.25rem; */
   }
 
   .menu-open:checked ~ .menu-open-button .menu-line-1 {
-    position: absolute;
-    /* margin: auto; */
-    top: 50%;
+    position: relative;
+    top: .2rem;
     transform: rotate(-45deg);
   }
 
@@ -152,34 +144,22 @@ header {
   }
 
   .menu-open:checked ~ .menu-open-button .menu-line-3 {
-      position: absolute;
-      /* margin: auto; */
-      top: 50%;
+      position: relative;
+      top: -.25rem;
       transform: rotate(45deg);
   }
 
   .nav-item {
       display: flex;
-      /* visibility: hidden; */
-      width: 4.5rem;
+      width: 6.5rem;
       height: 4.5rem;
       margin: .4rem;
       justify-content: center;
       align-items: center;
-      /* color: white; */
-      transition: .3s ease;
-  }
-
-  .menu-open ~ .nav-item {
-      margin-top: -5rem;
-      /* margin: .4rem; */
   }
 
   .menu-open:checked ~ .navbar-menu .nav {
       visibility: visible;
-      /* display: flex; */
-      /* margin-top: .75rem; */
-      /* margin: .4rem; */
   }
 }
 
@@ -206,6 +186,7 @@ header {
   width: 12rem;
   border: 2px solid var(--color-red);
   border-radius: 5rem;
+  box-shadow: 5px solid black;
 }
 .btn-primary:hover, .btn-primary:active {
   opacity: 0.9;
