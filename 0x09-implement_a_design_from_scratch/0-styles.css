@@ -32,9 +32,9 @@ header {
 .header-top {
   position: relative;
   display: flex;
+  min-height: 45vh;
   justify-content: space-between;
-  align-items: center;
-  padding-top: 2%;
+  padding-top: 2rem;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -42,18 +42,22 @@ header {
 .header-content {
   display: block;
   text-align: center;
-  width: 60rem;
-  height: 20rem;
+  max-width: 60rem;
+  height: 25rem;
   margin: auto;
-  margin-top: 35vh;
   color: var(--color-white);
   font-family: var(--font-family);
   letter-spacing: var(--letter-spacing);
 }
 
 /* NAV */
+
 .menu-btn, .menu-open, .menu-open-button {
   display: none;
+}
+
+.navbar-menu {
+  min-width: 17rem;
 }
 
 .nav {
@@ -71,7 +75,7 @@ header {
 
 .nav-item {
   width: 8.5rem;
-  padding: .6rem;
+  padding-right: .6rem;
 }
 
 .nav-link:hover{
@@ -94,6 +98,11 @@ header {
   }
   .header-top {
     padding-left: 1%;
+    min-height: 30vh;
+  }
+
+  .header-logo {
+    margin-left: 6vw;
   }
 
   .menu-open-button {
@@ -108,10 +117,9 @@ header {
     transition: transform .3s ease;
   }
   .nav {
-    display: block;
-    margin-bottom: -22rem;
+    display: none;
     margin-left: -15rem;
-    visibility: hidden;
+    margin-top: 5rem;
   }
 
   .menu-open-button:hover {
@@ -152,14 +160,15 @@ header {
   .nav-item {
       display: flex;
       width: 6.5rem;
-      height: 4.5rem;
+      height: 3.5rem;
       margin: .4rem;
       justify-content: center;
       align-items: center;
   }
 
+
   .menu-open:checked ~ .navbar-menu .nav {
-      visibility: visible;
+      display: block;
   }
 }
 
@@ -186,7 +195,7 @@ header {
   width: 12rem;
   border: 2px solid var(--color-red);
   border-radius: 5rem;
-  box-shadow: 5px solid black;
+  box-shadow: 0 0 20px #0000006b;
 }
 .btn-primary:hover, .btn-primary:active {
   opacity: 0.9;
@@ -195,6 +204,6 @@ header {
 @media only screen and (max-width: 480px) {
   .header-content {
     width: 20rem;
-    margin-top: 25vh;
+    /* margin-top: 25vh; */
   }
 }
