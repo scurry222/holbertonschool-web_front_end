@@ -5,6 +5,7 @@
   --font-size-large: 50px;
   --font-size-medium: 32px;
   --font-size-small: 20px;
+  --font-size-x-small: 14px;
   --letter-spacing: 0px;
   --color-white: white;
   --color-red: #FF6565;
@@ -222,4 +223,66 @@ header {
     width: 20rem;
     /* margin-top: 25vh; */
   }
+}
+
+/* what-we-do */
+
+.what-we-do {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40rem;
+  font-family: var(--font-family);
+}
+
+.section-title {
+  font-size: var(--font-size-medium);
+}
+
+.paragraph-text {
+  max-width: 40rem;
+}
+
+[class^="holberton_school-icon-"],
+[class*="holberton_school-icon-"] {
+  font-family: 'holberton_school-icon' !important;
+  font-size: 6rem;
+}
+
+.icon-title {
+  font-weight: bolder;
+}
+
+.icon-text {
+  max-width: 12rem;
+  font-size: var(--font-size-x-small);
+}
+
+.icon-content {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.holberton_school-icon-ic_sound::before {
+  content: "\e90e";
+  color: var(--color-red);
+}
+
+.holberton_school-icon-ic_video::before {
+  content: "\e910";
+  color: var(--color-red);
+}
+
+.holberton_school-icon-ic_music::before {
+  content: "\e90d";
+  color: var(--color-red);
+}
+
+.holberton_school-icon-ic_hearing::before {
+  content: "\e909";
+  color: var(--color-red);
 }
