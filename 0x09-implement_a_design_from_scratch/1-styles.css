@@ -1,5 +1,7 @@
 :root {
-  --font-family: 'Source Sans Pro', sans-serif;
+  --font-source-sans-pro: 'Source Sans Pro', sans-serif;
+  --font-source-sans-pro-bold: 'Source Sans Pro Bold', sans-serif;
+  --font-source-sans-pro-light: 'Source Sans Pro Light', sans-serif;
   --font-weight: bold;
   --font-weight-bolder: bolder;
   --font-size-large: 50px;
@@ -9,6 +11,10 @@
   --letter-spacing: 0px;
   --color-white: white;
   --color-red: #FF6565;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
 body {
@@ -34,8 +40,6 @@ header {
 .header-top {
   position: relative;
   display: flex;
-  /* min-height: 45vh; */
-  /* justify-content: space-between; */
   margin-bottom: 40vh;
   padding-top: 2rem;
   padding-left: 5%;
@@ -48,7 +52,7 @@ header {
   max-width: 60rem;
   margin: auto;
   color: var(--color-white);
-  font-family: var(--font-family);
+  font-family: var(--font-source-sans-pro);
   letter-spacing: var(--letter-spacing);
 }
 
@@ -76,7 +80,7 @@ header {
 }
   
 .nav .nav-item {
-  font-family: var(--font-family);
+  font-family: var(--font-source-sans-pro-bold);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight);
 }
@@ -99,6 +103,8 @@ header {
   color: white;
 }
 
+
+/* MEDIA SCREEN HEADER */
 @media only screen and (max-width: 480px) {
 
   header {
@@ -176,7 +182,7 @@ header {
 
   .nav-item {
       display: flex;
-      width: 6.5rem;
+      width: 7.5rem;
       height: 3.5rem;
       margin: .4rem;
       justify-content: center;
@@ -225,16 +231,15 @@ header {
   }
 }
 
-/* what-we-do */
-
-.what-we-do {
+/* SECTION */
+.section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 40rem;
-  font-family: var(--font-family);
+  font-family: var(--font-source-sans-pro);
 }
 
 .section-title {
@@ -242,17 +247,23 @@ header {
 }
 
 .paragraph-text {
-  max-width: 40rem;
+  max-width: 60rem;
+  margin: auto;
 }
 
+.text {
+  font-family: var(--font-source-sans-pro-light);
+}
+
+/* WHAT WE DO SECTION */
 [class^="holberton_school-icon-"],
 [class*="holberton_school-icon-"] {
   font-family: 'holberton_school-icon' !important;
-  font-size: 6rem;
+  font-size: 8rem;
 }
 
 .icon-title {
-  font-weight: bolder;
+  font-family: var(--font-source-sans-pro-bold);
 }
 
 .icon-text {
@@ -265,6 +276,8 @@ header {
   list-style: none;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 5rem;
+  flex-wrap: wrap;
 }
 
 .holberton_school-icon-ic_sound::before {
@@ -285,4 +298,26 @@ header {
 .holberton_school-icon-ic_hearing::before {
   content: "\e909";
   color: var(--color-red);
+}
+
+/* MEDIA SCREEN WHAT WE DO SECTION */
+@media only screen and (max-width: 824px) {
+  .section-container {
+    height: 60rem;
+  }
+  .paragraph-text {
+    max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-container {
+    height: 90rem;
+  }
+  .icon-content {
+    flex-direction: column;
+  }
+  .paragraph-text {
+    max-width: 20rem;
+  }
 }
