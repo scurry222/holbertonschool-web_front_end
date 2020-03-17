@@ -100,6 +100,12 @@ header {
 
 
 /* MEDIA SCREEN HEADER */
+@media only screen and (max-width: 650px) {
+  .dynamic-nav {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 480px) {
 
   header {
