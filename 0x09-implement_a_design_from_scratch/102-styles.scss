@@ -87,12 +87,14 @@ header {
     .nav-link {
       position: relative;
       text-decoration: none;
-      color: white;  
+      color: white;
+
+      &:hover {
+        color: var(--color-red);
+      }
     }
 
-    &:hover {
-      color: var(--color-red);
-    }
+
   }
 }
 

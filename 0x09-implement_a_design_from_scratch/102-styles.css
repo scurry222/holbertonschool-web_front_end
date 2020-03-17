@@ -83,7 +83,7 @@ header .nav .nav-link {
   text-decoration: none;
   color: white;
 }
-header .nav:hover {
+header .nav .nav-link:hover {
   color: var(--color-red);
 }
 
