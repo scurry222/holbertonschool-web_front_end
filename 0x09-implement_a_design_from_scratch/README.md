@@ -6,3 +6,5 @@ In this project, we will implement from scratch, without any library, a web page
 
 We are free to implement it the way we want, the objective is to have a fully functional webpage that looks the same as the designer file.
 
+This final result should look like the given Figma document:
+![](images_2/figma_document.png)
