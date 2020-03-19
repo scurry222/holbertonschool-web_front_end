@@ -53,6 +53,10 @@ header {
     padding: 0 5% 15%;
   }
 
+  .paragraph-text {
+    margin: auto;
+  }
+
   /* NAV */
   .dynamic-nav {
     display: flex;
@@ -99,13 +103,13 @@ header {
 }
 
 /* MEDIA SCREEN HEADER */
-@media only screen and (max-width: 650px) {
-  .dynamic-nav {
-    flex-direction: column;
-  }
-}
+// @media only screen and (max-width: 650px) {
+//   .dynamic-nav {
+//     flex-direction: column;
+//   }
+// }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 650px) {
 
   header {
     background-position: 44% 50%;

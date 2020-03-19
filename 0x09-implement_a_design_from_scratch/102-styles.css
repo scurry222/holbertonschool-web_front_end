@@ -52,6 +52,9 @@ header .header-content {
   letter-spacing: var(--letter-spacing);
   padding: 0 5% 15%;
 }
+header .paragraph-text {
+  margin: auto;
+}
 header .dynamic-nav {
   display: flex;
   width: 100%;
@@ -89,11 +92,6 @@ header .nav .nav-link:hover {
 
 /* MEDIA SCREEN HEADER */
 @media only screen and (max-width: 650px) {
-  .dynamic-nav {
-    flex-direction: column;
-  }
-}
-@media only screen and (max-width: 480px) {
   header {
     background-position: 44% 50%;
   }
