@@ -1,0 +1,65 @@
+:root {
+    --red: #E0003C;
+    --dark-red: #BC1340;
+    --grey: #8C8C8C
+    --white: #FFFFFF
+}
+
+.btn-primary {
+    background-color: var(--red);
+    border-color: var(--red);
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--dark-red);
+    border-color: var(--dark-red);
+}
+
+.btn-outline-primary {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+a,
+a:hover,
+a:focus {
+    color: var(--red);
+}
+
+.card,
+.card-header,
+.card-footer {
+	border-color:var(--red);
+}
+
+.card-header,
+.card-footer {
+	background-color: var(--red);
+	color: var(--white);
+}
+
+.card {
+    border-radius: 1rem !important;
+}
+
+.card-header:first-child {
+	border-radius: 1rem 1rem 0 0;
+}
+
+.text-muted {
+	color: var(--grey) !important;
+}
+
+.border-bottom {
+	border-bottom-color: var(--red) !important;
+}
