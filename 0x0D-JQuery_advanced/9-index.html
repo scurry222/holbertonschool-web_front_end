@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <title>Task 9</title>
+    <style>
+      .loading {
+        opacity: 0.2;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <script
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script type="application/javascript">
+      function createSearchForm() {
+        $("body").append("<input type='text'>", "<input type='submit' class='submit'>", "<ul>");
+        $(".submit").click(function () {
+          queryWikipedia($("input:nth-of-type(1)").val());
+        })
+        $("body").append("<ul id='pagination'>")
+      }
+
+      function addNewArticle(id, title, snippet) {
+        $("ul").append("<li", "<p><span>" + id + " - <b>" + title, "<p>" + snippet);
+      }
+
+      function queryWikipedia(search, offset = 0) {
+        $.ajax({
+          dataType: "json",
+          url: `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${search}&sroffset=${offset}&format=json&callback=?`,
+          success: function (res) {
+            $("ul").empty();
+            if (res.error) return console.log("Nothing Found");
+            res.query.search.forEach(({pageid, title, snippet}) => addNewArticle(pageid, title, snippet));
+            const totalHits = res.query.searchinfo.totalhits;
+            buildPagination(totalHits, 10, offset);
+          }
+        })
+      }
+
+      function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
+        $("#pagination").empty();
+        for (let i = 0; i < numberOfItems / itemsPerPage; i++)
+          $("#pagination").append('<a><li>' + (i + 1));
+        $("li").css({"display": "inline",  "cursor": "pointer", "margin-left": "10px"});
+        $(`a:nth-of-type(${currentOffset || 1})`).css("font-weight", "bold");
+        $("a").click(function () {
+          queryWikipedia($("input:nth-of-type(1)").val(), this.children[0].innerText);
+        })
+      }
+
+      function displayLoading(loading) {
+        loading ? $("ul:nth-of-type(1)").wrap("<div class='loading'></div>") : $("ul:nth-of-type(1)").unwrap();
+      }
+
+      createSearchForm();
+    </script>
+  </body>
+
+</html>
