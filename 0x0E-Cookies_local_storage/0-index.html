@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 0</title>
+</head>
+<body>
+    <h1>Login to the website</h1>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <input type="email" id="email" placeholder="Email">
+    <button id="login">Log me in</button>
+    <h1>Cookies</h1>
+    <button id="cookies">Show the cookies</button>
+    <script type="application/javascript">
+        document.getElementById('login').addEventListener('click', function(e) {
+            e.preventDefault();
+            setCookies();
+        });
+        document.getElementById('cookies').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCookies();
+        });
+        const setCookies = () => {
+            const firstName = "firstname=" + document.getElementById('firstname').value;
+            const email = "email=" + document.getElementById('email').value;
+            const d = new Date();
+            d.setTime(d.getTime() + (10 * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = `${firstName};${expires}; path=/`;
+            document.cookie = `${email};${expires}; path=/`;
+            console.log(document.cookie);
+        }
+        const showCookies = () => {
+            const p = document.createElement('p');
+            p.innerText = document.cookie;
+            document.querySelector('body').append(p);
+        }
+    </script>
+</body>
+</html>
